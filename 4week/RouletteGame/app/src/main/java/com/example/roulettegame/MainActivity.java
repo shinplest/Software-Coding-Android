@@ -12,8 +12,8 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     ImageView iv_roulette;
-    float startDegree = 0f;
-    float endDegree   = 0f;
+    float startDegree = 0;
+    float endDegree   = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
