@@ -18,8 +18,7 @@
         app:layout_constraintWidth_percent="0.9"
         app:layout_constraintDimensionRatio="1"
         android:src="@drawable/roulette_menu"
-        android:clickable="true"
-        android:onClick="rotate" />
+        android:clickable="true" />
 
     <ImageView
         android:layout_width="0dp"
