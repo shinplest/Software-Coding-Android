@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView iv_roulette;
     float startDegree = 0;
-    float endDegree   = 0;
+    float endDegree = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         startDegree = endDegree;
 
         Random rand = new Random();
-        int  degree_rand = rand.nextInt(360);
+        int degree_rand = rand.nextInt(360);
         endDegree = startDegree + 360 * 10 + degree_rand;
 
         ObjectAnimator object = ObjectAnimator.ofFloat(iv_roulette, "rotation", startDegree, endDegree);
