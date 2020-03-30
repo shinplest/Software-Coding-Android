@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        iv_roulette = (ImageView)findViewById(R.id.roulette);
+        iv_roulette = findViewById(R.id.roulette);
         iv_roulette.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
