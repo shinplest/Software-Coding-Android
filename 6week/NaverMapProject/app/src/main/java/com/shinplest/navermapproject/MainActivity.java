@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         naverMap.setSymbolScale(1.5f);
 
         // 각 지점의 위도, 경도
-        LatLng latlng1 = new LatLng(37.510530, 127.035824);
+        LatLng latlng1 = new LatLng(37.518012, 127.101966);
         LatLng latlng2 = new LatLng(37.511177, 127.032477);
 
         // 지도 중심
