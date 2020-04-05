@@ -16,6 +16,7 @@
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="lbhyhg80ue" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
