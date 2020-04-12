@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     Intent intent;
     SpeechRecognizer mRecognizer;
     MediaPlayer mp;
+    TextView tvMusicTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
         cl = (ConstraintLayout)findViewById(R.id.cl);
         iv = (ImageView)findViewById(R.id.iv);
+
+        tvMusicTitle = findViewById(R.id.tv_music_title);
 
         mp = new MediaPlayer();
 
@@ -126,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
             String[] rs = new String[mResult.size()];
             ///// 음성인식 결과를 문자열로 변환
             mResult.toArray(rs);
+            tvMusicTitle.setText(rs[0]);
 
             ///// 음성인식 문자에 해당하는 노래 배경 이미지 출력 및 노래 재생
             if (rs[0].equals("학교종")) {
@@ -140,6 +145,8 @@ public class MainActivity extends AppCompatActivity {
                 iv.setImageResource(R.drawable.img_elephant);
                 mp = MediaPlayer.create(MainActivity.this, R.raw.elephant);
                 mp.start();
+            } else if(rs[0].equals("시리야")){
+                tts.speak("네 주인님 저는 시리입니다.",TextToSpeech.QUEUE_FLUSH, null);
             }
         }
 
@@ -161,7 +168,6 @@ public class MainActivity extends AppCompatActivity {
             mp.stop();
             mp.release();
         }
-
         ///// 문자를 읽어 사은드로 출력
         tts.speak("어떤 노래를 들려드릴까요",TextToSpeech.QUEUE_FLUSH, null);
         ///// 음성인식 리스너 시작
