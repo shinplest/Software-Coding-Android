@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 public class PersonnelReg extends AppCompatActivity {
 
-    public final static int REQUES_PHOTO_CODE = 1;
+    public final static int REQUEST_PHOTO_CODE = 1;
     ImageView iv_photo;
     Uri photoUri;
 
@@ -68,12 +68,12 @@ public class PersonnelReg extends AppCompatActivity {
     public void selectPhoto(View v) {
         Intent intent = new Intent(Intent.ACTION_PICK,
                 MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(intent, REQUES_PHOTO_CODE);
+        startActivityForResult(intent, REQUEST_PHOTO_CODE);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUES_PHOTO_CODE) {
+        if (requestCode == REQUEST_PHOTO_CODE) {
             if (resultCode == RESULT_OK) {
                 photoUri = data.getData();
                 iv_photo.setImageURI(photoUri);
