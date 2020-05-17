@@ -1,0 +1,2 @@
+rootProject.name='DrawerLayout2'
+include ':app'
