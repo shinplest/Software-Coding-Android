@@ -1,5 +1,6 @@
 package com.example.sampledrawerlayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -30,8 +31,12 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                String text = "간단하게 공유하기를 만들 수 있습니다.";
+                intent.putExtra(Intent.EXTRA_TEXT, text);
+                Intent chooser = Intent.createChooser(intent, "친구에게 공유하기");
+                startActivity(chooser);
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
